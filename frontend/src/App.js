@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ApplyJob from "./pages/ApplyJob";
-import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Jobs from "./pages/Jobs";
@@ -11,19 +10,19 @@ function App() {
   return (
     <BrowserRouter>
       <nav className="navbar">
-        <h2>Job Board</h2>
+        <Link
+          to="/"
+          style={{
+            color:"#FFF8E7",
+            textDecoration: "none",
+          }}
+        >
+
+          <h2>Plum Careers</h2>
+        </Link>
 
         <div>
-          <Link
-            to="/"
-            style={{
-              marginRight: "20px",
-              color: "white",
-              textDecoration: "none",
-            }}
-          >
-            Home
-          </Link>
+        
 
           <Link
             to="/jobs"
@@ -60,7 +59,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Jobs />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

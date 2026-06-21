@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <div>
@@ -5,15 +7,9 @@ function Home() {
         <h1>Find Your Dream Job</h1>
         <p>Search and apply for jobs from top companies.</p>
 
-        <input
-          type="text"
-          placeholder="Search Jobs..."
-          className="search-box"
-        />
-
-        <button className="search-btn">
-          Search
-        </button>
+        <Link to="/jobs">
+          <button>Explore Jobs</button>
+        </Link>
       </div>
 
       <div className="jobs">
