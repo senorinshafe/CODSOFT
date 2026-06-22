@@ -1,31 +1,59 @@
+import { useState } from "react";
+
 function ApplyJob() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    alert(
+      "Application Submitted Successfully!\nEmail Notification Sent!"
+    );
+
+    setName("");
+    setEmail("");
+  };
+
   return (
-    <div style={{ textAlign: "center", padding: "50px" }}>
-      <h1>Apply for Job</h1>
+    <div className="jobs">
+      <h1>Apply For Job</h1>
 
-      <input
-        type="text"
-        placeholder="Full Name"
-        style={{ padding: "10px", width: "300px" }}
-      />
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          maxWidth: "500px",
+          margin: "auto",
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Enter Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
 
-      <br /><br />
+        <input
+          type="email"
+          placeholder="Enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
-      <input
-        type="email"
-        placeholder="Email"
-        style={{ padding: "10px", width: "300px" }}
-      />
+        <input
+          type="file"
+          accept=".pdf,.doc,.docx"
+        />
 
-      <br /><br />
-
-      <input type="file" />
-
-      <br /><br />
-
-      <button className="search-btn">
-        Submit Application
-      </button>
+        <button type="submit">
+          Submit Application
+        </button>
+      </form>
     </div>
   );
 }

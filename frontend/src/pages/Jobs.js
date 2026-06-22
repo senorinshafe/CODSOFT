@@ -105,7 +105,11 @@ function Jobs() {
               <p>Location: {job.location}</p>
               <p>Salary: {job.salary}</p>
               <p>Experience: {job.experience}</p>
-
+              <Link to="/jobdetails">
+                <button style={{ marginRight: "10px" }}>
+                  View Details
+                </button>
+              </Link>
               <Link to="/apply">
                 <button>Apply Now</button>
               </Link>
